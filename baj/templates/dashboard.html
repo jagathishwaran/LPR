@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="D:/baj/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Dashboard</h2>
+        <p>Total Entries: {{ total_entries }}</p>
+        <p>Registered Vehicles: {{ registered }}</p>
+        <p>Unregistered Vehicles: {{ unregistered }}</p>
+        <a href="templates\search.html">Search Vehicle</a><br>
+        <a href="templates\unregistered.html">View Unregistered Vehicles</a><br>
+        <a href="/logout">Logout</a>
+    </div>
+</body>
+</html>

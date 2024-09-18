@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Vehicle</title>
+    <link rel="stylesheet" href="static\style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Search Vehicle</h2>
+        <form method="POST">
+            <label for="vehicle_number">Vehicle Number:</label>
+            <input type="text" id="vehicle_number" name="vehicle_number" required><br>
+            <button type="submit">Search</button>
+        </form>
+        {% if result %}
+            <h3>Results:</h3>
+            <table>
+                <tr>
+                    <th>Vehicle Number</th>
+                    <th>Entry Time</th>
+                    <th>Exit Time</th>
+                    <th>Is Registered</th>
+                </tr>
+                {% for row in result %}
+                <tr>
+                    <td>{{ row['Vehicle Number'] }}</td>
+                    <td>{{ row['Entry Time'] }}</td>
+                    <td>{{ row['Exit Time'] }}</td>
+                    <td>{{ 'Yes' if row['Is Registered'] else 'No' }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+        <br>
+        <a href="/dashboard">Back to Dashboard</a>
+    </div>
+</body>
+</html>

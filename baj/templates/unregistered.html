@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unregistered Vehicles</title>
+    <link rel="stylesheet" href="static\style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Unregistered Vehicles</h2>
+        <table>
+            <tr>
+                <th>Vehicle Number</th>
+                <th>Entry Time</th>
+                <th>Exit Time</th>
+            </tr>
+            {% for row in unregistered %}
+            <tr>
+                <td>{{ row['Vehicle Number'] }}</td>
+                <td>{{ row['Entry Time'] }}</td>
+                <td>{{ row['Exit Time'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <a href="/dashboard">Back to Dashboard</a>
+    </div>
+</body>
+</html>

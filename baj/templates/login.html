@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Company Logo and Name -->
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <img src="static/logo.png" alt="Company Logo" style="height: 50px; margin-right: 10px; border-radius: 50%">
+            <h1>Petra Infotech</h1>
+        </div>
+        
+        <h2>Login</h2>
+        <form method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            
+            <!-- Forgot Password option -->
+            <a href="/forgot_password">Forgot Password?</a><br><br>
+            
+            <button type="submit">Login</button>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <p>{{ messages[0] }}</p>
+                {% endif %}
+            {% endwith %}
+        </form>
+    </div>
+</body>
+</html>
